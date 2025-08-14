@@ -34,11 +34,11 @@ body {
 
 .m_sct_text {
     position: absolute;
-    bottom: 30px;
+    bottom: 35px;
     left: 30%;
-    transform: translateX(-50%);
+    transform: translate(-50%);
     padding: 20px 60px;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
     color: #fff;
     z-index: 2;
@@ -216,9 +216,9 @@ body {
     margin: 30px auto;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
     border: 1px solid #333;
-    border-radius: 5px;
     background-color: white;
     transition: all 0.3s;
     box-sizing: border-box;
@@ -283,7 +283,7 @@ body {
 /* 모바일 (720px 이하) */
 @media screen and (max-width: 720px) {
     .m_sct_text {
-        font-size: 24px;
+        font-size: 32px;
         padding: 15px 30px;
     }
     
@@ -320,7 +320,6 @@ body {
 /* 480px 이하 추가 최적화 */
 @media screen and (max-width: 480px) {
     .m_sct_text {
-        font-size: 20px;
         padding: 10px 30px;
     }
     

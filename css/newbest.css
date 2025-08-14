@@ -37,7 +37,7 @@ body {
     position: absolute;
     bottom: 35px;
     left: 30%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     padding: 20px 60px;
     font-size: 36px;
     font-weight: bold;
@@ -227,7 +227,7 @@ body {
 /* 모바일 (720px 이하) */
 @media screen and (max-width: 720px) {
     .m_sct_text {
-        font-size: 24px;
+        font-size: 32px;
         padding: 15px 30px;
 
     }
@@ -275,7 +275,6 @@ body {
     }
 
     .m_sct_text {
-        font-size: 20px;
         padding: 10px 30px;
     }
 
