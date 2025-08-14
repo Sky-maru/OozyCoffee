@@ -10,7 +10,7 @@ $(document).ready(function(){
     $(".notice").mouseenter(function(arrowShow){
         $(this).find(".noticeArrowImg").stop(true, true).show(400);
     })
-    $(".notice").mouseout(function(arrowHide){
+    $(".notice").mouseleave(function(arrowHide){
         $(this).find(".noticeArrowImg").stop(true, true).hide(400);
        
     })
