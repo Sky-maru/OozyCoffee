@@ -1,8 +1,9 @@
 $(document).ready(function(){
     $(".noticeContent").hide();
     $(".notice").click(function(){
-        $(this).siblings(".noticeContent").hide(700);
-        $(this).next(".noticeContent").slideDown(700);
+        var $currentContent = $(this).next(".noticeContent");
+        $(this).siblings(".notice").next(".noticeContent").stop(true, true).slideUp(700);
+        $currentContent.stop(true, true).slideToggle(700);
         
     })
     $(".noticeArrowImg").hide();

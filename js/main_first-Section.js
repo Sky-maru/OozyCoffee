@@ -11,6 +11,7 @@
   const menuSwiper = new Swiper(".home .menuSwiper", {
     slidesPerView: 4,
     spaceBetween: 30,
+    loop: true,
     navigation: {
       nextEl: ".home .swiper-button-next",
       prevEl: ".home .swiper-button-prev",
