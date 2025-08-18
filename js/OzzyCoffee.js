@@ -20,7 +20,16 @@ $(document).ready(function () {
                     },
                 });
             }
+        } else {
+            if (window.mySwiper) {
+                window.mySwiper.destroy(true, true);
+                window.mySwiper = null;
+            }
         }
+    }
+    if(window.innerWidth <= 720 ){
+        $(".swiper-button-next").css("display","none")
+        $(".swiper-button-prev").css("display","none")
     }
 
     $(window).on('load resize', initSwiper);

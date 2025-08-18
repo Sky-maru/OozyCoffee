@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 @font-face {
     font-family: 'TheJamsil5Bold';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
@@ -10,10 +9,6 @@
     font-style: normal;
 }
 
-/* <weight>: Use a value from 100 to 900
-<uniquifier>: Use a unique and descriptive class name */
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -41,7 +36,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1.5;
-    /* 한글은 받침때문에 라인헤잇이 1이면 너무 좁다 */
 }
 ol, ul {
 	list-style: none;

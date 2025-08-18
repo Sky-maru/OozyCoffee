@@ -6,9 +6,12 @@
 }
 
 .art_Franchise {
-    width: 900px;
-    height: 450px;
+    max-width: 900px;  /* width → max-width */
+    width: 100%;       /* 추가 */
+    height: auto;      /* height: 450px → auto (선택사항) */
     margin: 0 auto;
+    padding: 0 20px;   /* 추가 */
+    box-sizing: border-box;  /* 추가 */
 }
 
 .Franchise_title {
@@ -53,14 +56,13 @@
 
 }
 
+/* 변경 후 */
 .Franchise_btn_parent {
-    width: 600px;
+    max-width: 600px;  /* width → max-width */
+    width: 100%;       /* 추가 */
     display: flex;
     justify-content: space-between;
     margin: 70px auto 0;
-}
-.Franchise_btn_parent>a{
-    width: 100%;
 }
 
 .Franchise_btn {
@@ -167,9 +169,6 @@
     .Franchise_btn_parent {
         width: 100%;
         display: block;
-    }
-    .Franchise_btn_parent div{
-        width: 100%;
     }
 
     .Franchise_btn {

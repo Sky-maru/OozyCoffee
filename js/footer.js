@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
+
         // 스크롤시 Top 버튼 표시/숨김 - 푸터가 보일 때만 + fade 효과
         window.addEventListener('scroll', function() {
             const footer = document.querySelector('.footer');

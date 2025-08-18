@@ -52,6 +52,10 @@
   object-fit: cover;
   transform: translate(-15%, -2%);
 }
+.map-figure>iframe{
+  width: 100%;
+  height:450px;
+}
 
 /* TEL/FAX 행 */
 .dir-contact{ 
@@ -63,8 +67,7 @@
   align-items:center; 
   margin:8px 0;
 }
-.dir-contact dt{ 
-    width:60px; 
+.dir-contact dt{  
     color:#222; 
     font-weight:700; 
 }
@@ -89,9 +92,7 @@
   .dir-wrap{
     grid-template-columns: minmax(580px, 1fr) minmax(420px, 1fr);
   }
-  .dir-addr{
-    white-space: nowrap;
-  }
+ 
 }
 
 @media (max-width:1024px) and (min-width:721px){
@@ -135,7 +136,12 @@
     display: block;
     margin: 0 auto;
   }
+  .map-figure>iframe{
+  width: 100%;
+  height:500px;
 }
+}
+
 
 
 @media (max-width:720px){
@@ -147,6 +153,7 @@
     padding: 16px; 
     gap: 20px; 
     grid-template-columns: 1fr; 
+    box-sizing: border-box;
 }
 
   .dir-info h2{ 
@@ -182,7 +189,6 @@
 }
   .dir-contact dd{ 
     margin:0; 
-    white-space:nowrap; 
 }
   .dir-map img{
     width: 100%;
@@ -191,4 +197,8 @@
     display: block;
     margin: 0 auto;
   }
+  .map-figure>iframe{
+  width: 100%;
+  height:300px;
+}
 }

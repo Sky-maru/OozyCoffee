@@ -1,6 +1,5 @@
 main{
     width: 100%;
-    padding-top: 100px;
 }
 
 .sec1_tit {
@@ -345,6 +344,12 @@ main{
 
         font-family: "Noto Sans KR", sans-serif;
     }
+    .sec3_txt_wrap_slide .swiper-button-next {
+        display: none;
+    }
+       .sec3_txt_wrap_slide .swiper-button-prev{
+        display: none;
+       } 
 
     .sec3_txt_wrap_slide .sec3_txt_wrap_txt_right {
         text-align: start;
