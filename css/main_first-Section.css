@@ -1,0 +1,920 @@
+/* ===== 공통 wrapper ===== */
+.home { 
+  padding-top: 100px;
+  background: #FAF7F2; 
+  color: #111; 
+}
+
+/* ===== 메인 배너 슬라이더 ===== */
+.home .hero { 
+  position: relative; 
+  z-index: 0; 
+}
+
+.home .hero .mySwiper { 
+  height: 500px; 
+  width: 100%;
+}
+
+.home .hero .swiper { 
+  width: 100%;
+  max-width: none;
+  position: relative; 
+}
+
+.home .hero .swiper-wrapper { 
+  height: 100%; 
+}
+
+.home .hero .swiper-slide { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: transparent; 
+}
+
+.home .hero .swiper-slide img {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  object-fit: cover; /* fill → cover로 변경하여 비율 유지 */
+  display: block;
+}
+
+.home .hero .swiper-pagination {
+  position: absolute; 
+  bottom: 20px; 
+  left: 0; 
+  right: 0; 
+  text-align: center; 
+  z-index: 10;
+}
+
+.home .hero .swiper-pagination-bullet { 
+  width: 10px; 
+  height: 10px; 
+  background: #fff; 
+  opacity: 0.5; 
+  margin: 0 4px;
+}
+
+.home .hero .swiper-pagination-bullet-active { 
+  background: #D80056; 
+  opacity: 1; 
+}
+
+/* ===== 메뉴 섹션 타이틀/카테고리 ===== */
+.home .menu-header { 
+  padding: 30px 0; 
+  margin-top: 56px; 
+}
+
+.home .menu-header-inner {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1200px; 
+  width: 100%; 
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.home .menu-title { 
+  font-size: 28px; 
+  font-weight: 700; 
+  color: #111; 
+  white-space: nowrap; 
+}
+
+.home .menu-category { 
+  display: flex; 
+  gap: 24px; 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.home .menu-category li { 
+  cursor: pointer; 
+  color: #888; 
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.home .menu-category li:hover {
+  color: #1B5E4A;
+  background-color: rgba(27, 94, 74, 0.1);
+}
+
+.home .menu-category li.active { 
+  color: #1B5E4A; 
+  font-weight: 700;
+  background-color: rgba(27, 94, 74, 0.15);
+}
+
+/* ===== 메뉴 슬라이더 ===== */
+.home .menu-section { 
+  padding: 10px 0 60px;
+}
+
+.home .menuSwiper { 
+  width: 70%; 
+  margin: 0 auto; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.home .menuSwiper .swiper-wrapper { 
+  padding: 0; 
+  margin: 0; 
+}
+
+.home .menuSwiper .swiper-slide {
+  display: flex; 
+  justify-content: center; 
+  background: transparent;
+}
+
+.home .menuSwiper .menu-card { 
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  text-align: center; 
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.home .menuSwiper .menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.home .menuSwiper .menu-card img {
+  width: 100%; 
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 260 / 182; 
+  margin-bottom: 16px; 
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.home .menuSwiper .menu-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 이미지 위에 그라데이션 오버레이 효과 (선택사항) */
+.home .menuSwiper .menu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 60px; /* 텍스트 영역 제외 */
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.home .menuSwiper .menu-card:hover::before {
+  opacity: 1;
+}
+
+.home .menuSwiper .menu-card h3 { 
+  font-size: 16px; 
+  font-weight: 700; 
+  margin-bottom: 8px; 
+  color: #111; 
+}
+
+.home .menuSwiper .menu-card p { 
+  font-size: 14px; 
+  color: #666; 
+  line-height: 1.5; 
+}
+
+/* 네비게이션 화살표 - 모든 화면에서 숨김 */
+.home .menuSwiper .swiper-button-prev,
+.home .menuSwiper .swiper-button-next {
+  display: none;
+}
+
+/* ===== 반응형 미디어 쿼리 ===== */
+
+/* 큰 데스크톱 (1440px 이상) */
+@media (min-width: 1441px) {
+  .home .hero .mySwiper {
+    height: 600px;
+  }
+  
+  .home .menuSwiper {
+    width: 60%;
+  }
+}
+
+/* 데스크톱 (1200px ~ 1440px) */
+@media (max-width: 1440px) and (min-width: 1201px) {
+  .home .menu-header-inner { 
+    padding: 0 40px; 
+  }
+  
+  .home .menuSwiper { 
+    width: 75%; 
+  }
+}
+
+/* 중간 데스크톱 (1024px ~ 1200px) */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .home .menu-header-inner { 
+    padding: 0 20px; 
+  }
+  
+  .home .menuSwiper { 
+    width: 80%; 
+  }
+  
+  .home .hero .mySwiper {
+    height: 450px;
+  }
+}
+
+/* 태블릿 (768px ~ 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .home { 
+    padding-top: 80px;
+  }
+  
+  .home .hero .mySwiper {
+    height: 400px;
+  }
+  
+  .home .menu-header { 
+    margin-top: 40px; 
+    padding: 20px 0; 
+  }
+  
+  .home .menu-header-inner { 
+    max-width: none;
+    width: 90%;         
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .home .menu-title {
+    font-size: 24px; 
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .home .menu-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  
+  .home .menu-category li {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+  
+  .home .menuSwiper { 
+    width: 85%; 
+  }
+}
+
+/* 모바일 (480px ~ 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .home { 
+    padding-top: 70px;
+  }
+  
+  .home .hero .mySwiper {
+    height: 350px;
+  }
+  
+  .home .menu-header { 
+    margin-top: 32px; 
+    padding: 16px 0; 
+  }
+  
+  .home .menu-header-inner { 
+    width: 92%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .home .menu-title { 
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .home .menu-category { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap; 
+  }
+  
+  .home .menu-category li {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  
+  .home .menuSwiper { 
+    width: 90%; 
+  }
+  
+  .home .menuSwiper .menu-card { 
+    max-width: 220px; 
+  }
+  
+  .home .menuSwiper .swiper-button-prev,
+  .home .menuSwiper .swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .home .menuSwiper .swiper-button-prev { 
+    left: -10px; 
+  }
+  
+  .home .menuSwiper .swiper-button-next { 
+    right: -10px; 
+  }
+}
+
+/* 작은 모바일 (320px ~ 480px) */
+@media (max-width: 480px) {
+  .home { 
+    padding-top: 60px;
+  }
+  
+  .home .hero .mySwiper {
+    height: 280px;
+  }
+  
+  .home .menu-header { 
+    margin-top: 24px; 
+    padding: 12px 0; 
+  }
+  
+  .home .menu-header-inner { 
+    width: 95%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .home .menu-title { 
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .home .menu-category { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap; 
+  }
+  
+  .home .menu-category li {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+  
+  .home .menuSwiper { 
+    width: 95%; 
+  }
+  
+  .home .menuSwiper .menu-card { 
+    max-width: 200px; 
+  }
+  
+  .home .menuSwiper .menu-card img {
+    aspect-ratio: 200 / 140;
+  }
+  
+  .home .menuSwiper .menu-card h3 {
+    font-size: 15px;
+  }
+  
+  .home .menuSwiper .menu-card p {
+    font-size: 13px;
+  }
+  /* ===== 공통 wrapper ===== */
+.home { 
+  padding-top: 100px;
+  background: #FAF7F2; 
+  color: #111; 
+}
+
+/* ===== 메인 배너 슬라이더 ===== */
+.home .hero { 
+  position: relative; 
+  z-index: 0; 
+}
+
+.home .hero .mySwiper { 
+  height: 500px; 
+  width: 100%;
+}
+
+.home .hero .swiper { 
+  width: 100%;
+  max-width: none;
+  position: relative; 
+}
+
+.home .hero .swiper-wrapper { 
+  height: 100%; 
+}
+
+.home .hero .swiper-slide { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: transparent; 
+}
+
+.home .hero .swiper-slide img {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  object-fit: cover; /* fill → cover로 변경하여 비율 유지 */
+  display: block;
+}
+
+.home .hero .swiper-pagination {
+  position: absolute; 
+  bottom: 20px; 
+  left: 0; 
+  right: 0; 
+  text-align: center; 
+  z-index: 10;
+}
+
+.home .hero .swiper-pagination-bullet { 
+  width: 10px; 
+  height: 10px; 
+  background: #fff; 
+  opacity: 0.5; 
+  margin: 0 4px;
+}
+
+.home .hero .swiper-pagination-bullet-active { 
+  background: #D80056; 
+  opacity: 1; 
+}
+
+/* ===== 메뉴 섹션 타이틀/카테고리 ===== */
+.home .menu-header { 
+  padding: 30px 0; 
+  margin-top: 56px; 
+}
+
+.home .menu-header-inner {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1200px; 
+  width: 100%; 
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.home .menu-title { 
+  font-size: 28px; 
+  font-weight: 700; 
+  color: #111; 
+  white-space: nowrap; 
+}
+
+.home .menu-category { 
+  display: flex; 
+  gap: 24px; 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.home .menu-category li { 
+  cursor: pointer; 
+  color: #888; 
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.home .menu-category li:hover {
+  color: #1B5E4A;
+  background-color: rgba(27, 94, 74, 0.1);
+}
+
+.home .menu-category li.active { 
+  color: #1B5E4A; 
+  font-weight: 700;
+  background-color: rgba(27, 94, 74, 0.15);
+}
+
+/* ===== 메뉴 슬라이더 ===== */
+.home .menu-section { 
+  padding: 10px 0 60px;
+}
+
+.home .menuSwiper { 
+  width: 70%; 
+  margin: 0 auto; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.home .menuSwiper .swiper-wrapper { 
+  padding: 0; 
+  margin: 0; 
+}
+
+.home .menuSwiper .swiper-slide {
+  display: flex; 
+  justify-content: center; 
+  background: transparent;
+}
+
+.home .menuSwiper .menu-card { 
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  text-align: center; 
+  box-sizing: border-box;
+}
+
+.home .menuSwiper .menu-card img {
+  width: 100%; 
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 260 / 182; 
+  margin-bottom: 16px; 
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.home .menuSwiper .menu-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 이미지 위에 그라데이션 오버레이 효과 (선택사항) */
+.home .menuSwiper .menu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 60px; /* 텍스트 영역 제외 */
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.home .menuSwiper .menu-card:hover::before {
+  opacity: 1;
+}
+
+.home .menuSwiper .menu-card h3 { 
+  font-size: 16px; 
+  font-weight: 700; 
+  margin-bottom: 8px; 
+  color: #111; 
+}
+
+.home .menuSwiper .menu-card p { 
+  font-size: 14px; 
+  color: #666; 
+  line-height: 1.5; 
+}
+
+/* 네비게이션 화살표 - 모든 화면에서 숨김 */
+.home .menuSwiper .swiper-button-prev,
+.home .menuSwiper .swiper-button-next {
+  display: none;
+}
+
+/* ===== 반응형 미디어 쿼리 ===== */
+
+/* 큰 데스크톱 (1440px 이상) */
+@media (min-width: 1441px) {
+  .home .hero .mySwiper {
+    height: 600px;
+  }
+  
+  .home .menuSwiper {
+    width: 60%;
+  }
+}
+
+/* 데스크톱 (1200px ~ 1440px) */
+@media (max-width: 1440px) and (min-width: 1201px) {
+  .home .menu-header-inner { 
+    padding: 0 40px; 
+  }
+  
+  .home .menuSwiper { 
+    width: 75%; 
+  }
+}
+
+/* 중간 데스크톱 (1024px ~ 1200px) */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .home .menu-header-inner { 
+    padding: 0 20px; 
+  }
+  
+  .home .menuSwiper { 
+    width: 80%; 
+  }
+  
+  .home .hero .mySwiper {
+    height: 450px;
+  }
+}
+
+/* 태블릿 (768px ~ 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .home { 
+    padding-top: 80px;
+  }
+  
+  .home .hero .mySwiper {
+    height: 400px;
+  }
+  
+  .home .menu-header { 
+    margin-top: 40px; 
+    padding: 20px 0; 
+  }
+  
+  .home .menu-header-inner { 
+    max-width: none;
+    width: 90%;         
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .home .menu-title {
+    font-size: 24px; 
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .home .menu-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  
+  .home .menu-category li {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+  
+  .home .menuSwiper { 
+    width: 85%; 
+  }
+}
+
+/* 모바일 (480px ~ 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .home { 
+    padding-top: 70px;
+  }
+  
+  .home .hero .mySwiper {
+    height: 350px;
+  }
+  
+  .home .menu-header { 
+    margin-top: 32px; 
+    padding: 16px 0; 
+  }
+  
+  .home .menu-header-inner { 
+    width: 92%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .home .menu-title { 
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .home .menu-category { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap; 
+  }
+  
+  .home .menu-category li {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  
+  .home .menuSwiper { 
+    width: 90%; 
+  }
+  
+  .home .menuSwiper .menu-card { 
+    max-width: 220px; 
+  }
+  
+  .home .menuSwiper .swiper-button-prev,
+  .home .menuSwiper .swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .home .menuSwiper .swiper-button-prev { 
+    left: -10px; 
+  }
+  
+  .home .menuSwiper .swiper-button-next { 
+    right: -10px; 
+  }
+}
+
+/* 작은 모바일 (320px ~ 480px) */
+@media (max-width: 480px) {
+  .home { 
+    padding-top: 60px;
+  }
+  
+  .home .hero .mySwiper {
+    height: 280px;
+  }
+  
+  .home .menu-header { 
+    margin-top: 24px; 
+    padding: 12px 0; 
+  }
+  
+  .home .menu-header-inner { 
+    width: 95%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .home .menu-title { 
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .home .menu-category { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap; 
+  }
+  
+  .home .menu-category li {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+  
+  .home .menuSwiper { 
+    width: 95%; 
+  }
+  
+  .home .menuSwiper .menu-card { 
+    max-width: 200px; 
+  }
+  
+  .home .menuSwiper .menu-card img {
+    aspect-ratio: 200 / 140;
+  }
+  
+  .home .menuSwiper .menu-card h3 {
+    font-size: 15px;
+  }
+  
+  .home .menuSwiper .menu-card p {
+    font-size: 13px;
+  }
+  
+  /* 작은 모바일에서는 화살표 이미 숨겨져 있음 */
+}
+
+/* 아주 작은 모바일 (320px 이하) */
+@media (max-width: 320px) {
+  .home .hero .mySwiper {
+    height: 240px;
+  }
+  
+  .home .menu-title { 
+    font-size: 18px;
+  }
+  
+  .home .menu-category li {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  
+  .home .menuSwiper .menu-card { 
+    max-width: 180px; 
+  }
+}
+  /* 작은 모바일에서는 화살표 이미 숨겨져 있음 */
+}
+
+/* 아주 작은 모바일 (320px 이하) */
+@media (max-width: 320px) {
+  .home .hero .mySwiper {
+    height: 240px;
+  }
+  
+  .home .menu-title { 
+    font-size: 18px;
+  }
+  
+  .home .menu-category li {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  
+  .home .menuSwiper .menu-card { 
+    max-width: 180px; 
+  }
+}

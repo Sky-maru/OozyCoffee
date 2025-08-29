@@ -1,0 +1,400 @@
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #FAF7F2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+header>h1 {
+    width: 140px;
+    margin-right: 50px;
+    flex-shrink: 0; /* 로고 크기 고정 */
+}
+
+header>h1 img {
+    vertical-align: bottom;
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+}
+
+header>.h_nav {
+    flex: 1 1 auto;
+    margin-right: 50px;
+}
+
+header>.h_nav>ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header>.h_nav>ul>li {
+    width: 100%;
+    padding: 38px 0;
+    position: relative;
+}
+
+header>.h_nav>ul>li>a {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 600;
+    color: #013220;
+}
+
+header>.h_nav>ul>li:hover>a {
+    color: #D80056;
+    transition: color 0.3s ease;
+}
+
+header .h_btn {
+    width: 220px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0; /* 버튼 영역 고정 */
+}
+
+header .h_btn>div:nth-child(2) {
+    display: none;
+}
+
+header .h_sub_nav {
+    display: none;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    z-index: 99;
+}
+
+header .h_sub_nav>li {
+    padding-top: 10px;
+}
+
+header .h_sub_nav>li>a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 300;
+    color: #FAF7F2;
+}
+
+header .h_sub_nav>li>a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+header .h_sub_nav>li>a:hover::after {
+    width: 100%;
+}
+
+header .h_sub_bg {
+    display: none;
+    width: 100%;
+    height: 130px;
+    background-color: #1B5E4A;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+header>.h_side_nav {
+    width: 400px;
+    height: 100vh;
+    background-color: #FAF7F2;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    text-align: end;
+    padding: 30px;
+    box-sizing: border-box;
+    border-left: 10px solid #013220;
+    box-shadow: inset 7px 0 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+header .h_side_nav_icon {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+header .h_side_nav_icon div {
+    flex: 1;
+    max-width: 100px;
+    height: 100%;
+}
+
+header .h_side_nav_icon div:nth-child(1)>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 비율 유지 */
+}
+
+header .h_side_nav_icon div:nth-child(2)>img {
+    width: 50px;
+    height: auto;
+}
+
+header .h_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+header .h_side_nav_wrap>li {
+    padding: 20px 0;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #013220;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+header .h_side_nav_wrap_sub {
+    display: none;
+}
+
+header .h_side_nav_wrap_sub>li {
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header .h_side_nav_wrap_sub>li>a {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #013220;
+    position: relative;
+}
+
+/* 1024px 이하 - 태블릿 */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 0 20px; /* 30px → 20px */
+        height: 90px; /* 100px → 90px */
+    }
+    
+    header>h1 {
+        width: 120px; /* 140px → 120px */
+        margin-right: 30px; /* 50px → 30px */
+    }
+    
+    header>h1 img {
+        width: 80%; /* 70% → 80% 로고 크기 증가 */
+    }
+    
+    header>.h_nav {
+        display: none;
+    }
+
+    header .h_btn {
+        width: auto; /* 220px → auto */
+        gap: 20px; /* 30px → 20px */
+    }
+    
+    header .h_btn>div:nth-child(2) {
+        display: block;
+    }
+    
+    header .h_btn>div:nth-child(1)>a>img {
+        height: 35px; /* 버튼 이미지 크기 조정 */
+        width: auto;
+    }
+    
+    header .h_btn>div:nth-child(2)>img {
+        width: 30px; /* 메뉴 아이콘 크기 조정 */
+        height: auto;
+    }
+    
+    /* 사이드 네비게이션 조정 */
+    header>.h_side_nav {
+        width: 350px; /* 400px → 350px */
+        right: -350px;
+        padding: 25px; /* 30px → 25px */
+    }
+    
+    header .h_sub_nav {
+        top: 90px; /* 100px → 90px */
+    }
+    
+    header .h_sub_bg {
+        top: 90px; /* 100px → 90px */
+    }
+}
+
+/* 720px 이하 - 모바일 */
+@media screen and (max-width: 720px) {
+    header {
+        padding: 0 15px; /* 20px → 15px */
+        height: 80px; /* 90px → 80px */
+    }
+    
+    header>h1 {
+        width: 110px; /* 120px → 110px */
+        margin-right: 20px; /* 30px → 20px */
+    }
+    
+    header>h1 img {
+        width: 70%; /* 80% → 70%  */
+    }
+    
+    header .h_btn {
+        gap: 15px; /* 20px → 15px */
+    }
+    
+    header .h_btn>div:nth-child(1)>a>img {
+        height: 32px; /* 35px → 32px */
+    }
+    
+    header .h_btn>div:nth-child(2)>img {
+        width: 28px; /* 30px → 28px */
+    }
+    
+    /* 사이드 네비게이션 모바일 최적화 */
+    header>.h_side_nav {
+        width: 300px; /* 350px → 300px */
+        right: -300px;
+        padding: 20px; /* 25px → 20px */
+    }
+    
+    header .h_side_nav_icon {
+        height: 70px; /* 90px → 70px */
+    }
+    
+    header .h_side_nav_icon div {
+        max-width: 80px; /* 100px → 80px */
+    }
+    
+    header .h_side_nav_icon div:nth-child(2)>img {
+        width: 40px; /* 50px → 40px */
+    }
+    
+    header .h_side_nav_wrap>li {
+        padding: 18px 0; /* 20px → 18px */
+        font-size: 18px; /* 20px → 18px */
+    }
+    
+    header .h_side_nav_wrap_sub>li {
+        padding: 8px 0; /* 10px → 8px */
+        font-size: 15px; /* 16px → 15px */
+    }
+    
+    header .h_sub_nav {
+        top: 80px; /* 90px → 80px */
+    }
+    
+    header .h_sub_bg {
+        top: 80px; /* 90px → 80px */
+    }
+}
+
+/* 480px 이하 - 소형 모바일 */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 0 10px; /* 15px → 10px */
+        height: 70px; /* 80px → 70px */
+    }
+    
+    header>h1 {
+        width: 100px; /* 110px → 100px */
+        margin-right: 15px; /* 20px → 15px */
+    }
+    
+    header>h1 img {
+        width: 60%; /* 90% → 95% 작은 화면에서 최대한 크게 */
+    }
+    
+    header .h_btn {
+        gap: 12px; /* 15px → 12px */
+    }
+    
+    header .h_btn>div:nth-child(1)>a>img {
+        height: 28px; /* 32px → 28px */
+    }
+    
+    header .h_btn>div:nth-child(2)>img {
+        width: 25px; /* 28px → 25px */
+    }
+    
+    /* 사이드 네비게이션 소형 모바일 최적화 */
+    header>.h_side_nav {
+        width: 210px; /* 300px → 280px */
+        right: -280px;
+        padding: 15px; /* 20px → 15px */
+    }
+    
+    header .h_side_nav_icon {
+        height: 60px; /* 70px → 60px */
+    }
+    
+    header .h_side_nav_icon div {
+        max-width: 70px; /* 80px → 70px */
+    }
+    
+    header .h_side_nav_wrap>li {
+        padding: 15px 0; /* 18px → 15px */
+        font-size: 16px; /* 18px → 16px */
+    }
+    
+    header .h_side_nav_wrap_sub>li {
+        padding: 6px 0; /* 8px → 6px */
+        font-size: 14px; /* 15px → 14px */
+    }
+    
+    header .h_sub_nav {
+        top: 70px; /* 80px → 70px */
+    }
+    
+    header .h_sub_bg {
+        top: 70px; /* 80px → 70px */
+    }
+}
+
+/* 가로스크롤 방지 */
+@media screen and (max-width: 1024px) {
+    header {
+        min-width: 320px; /* 최소 너비 설정 */
+    }
+}
+
+/* 아주 작은 화면에서 로고 최적화 */
+@media screen and (max-width: 360px) {
+    header>h1 {
+        width: 90px;
+        margin-right: 10px;
+    }
+    
+    header>h1 img {
+        width: 60%; /* 최대한 크게 */
+    }
+    
+    header .h_btn {
+        gap: 10px;
+    }
+}
